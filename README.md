@@ -17,7 +17,9 @@ mutate(DV=as.numeric(LIDV)) |>
 ggplot(dataset, aes(x = TIME, y = LIDV)) +
   geom_line(aes(color = factor(DOSE)), size = 0.5)
 
+
   ![1번_R](https://github.com/jueun429/PK-PD-R-study-/assets/133086206/0adc316c-53ff-496a-b70c-0a32dcbae83c)
+
 
 
 2번문제
@@ -43,7 +45,9 @@ data_mean_sd_1 |>
   geom_errorbar(aes(ymin = LIDV_mean + LIDV_sd, ymax = LIDV_mean - LIDV_sd)) +
   facet_wrap(~DOSE) + labs(title = "cycle1_pk")
 
+
 ![2번](https://github.com/jueun429/PK-PD-R-study-/assets/133086206/49d4d4a5-05fd-49f4-a38e-c3d30b7281e5)
+
 
 
 3번문제
@@ -71,4 +75,6 @@ NCA_CMAX <- nca_result |>
             CMAX_max = max(CMAX)
   )
 
+
 ![3번CMAX](https://github.com/jueun429/PK-PD-R-study-/assets/133086206/c7af8ed1-6335-42ac-923a-e7d8586e549b)
+
