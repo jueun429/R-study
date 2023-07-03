@@ -1,5 +1,23 @@
 # PK-PD
 
+１번문제
+
+library("dplyr")
+library("ggplot2") 
+
+
+dataset <- read.csv("C:/PKPD/pkpd_dataset.csv") |> 
+  subset(CMT==2 & CYCLE==1,) |> 
+  group_by(DOSE, ID) #%>%
+mutate(DV=as.numeric(LIDV)) |> 
+  mutate(DV_mean=mean(LIDV, na.rm = TRUE)) |> 
+  mutate(DV_SD =sd(LIDV, na.rm = TRUE)) |> 
+  mutate(DV_SD=as.numeric(LIDV_SD))
+
+
+ggplot(dataset, aes(x = TIME, y = LIDV)) +
+  geom_line(aes(color = factor(DOSE)), size = 0.5)
+![1번](https://github.com/jueun429/PK-PD-R-study-/assets/133086206/a8424378-35f9-47a5-bf90-4adf32b06ca8)
 
 2번문제
 
