@@ -1,4 +1,4 @@
-# PK-PD-R-study-
+# PK-PD
 
 
 2번문제
