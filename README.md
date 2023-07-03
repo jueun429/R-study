@@ -43,3 +43,31 @@ data_mean_sd_1 |>
   facet_wrap(~DOSE) + labs(title = "cycle1_pk")
 
 ![2번](https://github.com/jueun429/PK-PD-R-study-/assets/133086206/49d4d4a5-05fd-49f4-a38e-c3d30b7281e5)
+
+
+3번문제
+
+library("dplyr")
+library("ggplot2")
+install.packages("NonCompart")
+install.packages("knitr")
+library(NonCompart)
+library(knitr)
+
+NCA_1 <- read.csv("C:/PKPD/pkpd_dataset.csv") |> 
+  filter(NAME == "PK Concentration" & !is.na(LIDV)) |>
+  select(ID, NOMTIME, LIDV, DOSE, NAME)
+
+nca_result <- tblNCA(NCA, key=c("ID", "DOSE"), colTime="NOMTIME", colConc="LIDV",timeUnit = "h", doseUnit="mg", concUnit="ng/mL")
+
+NCA_CMAX <- nca_result |> 
+  select(ID, DOSE, CMAX) |>
+  group_by(DOSE) |>
+  summarize(CMAX_mean = mean(CMAX),
+            CMAX_median = median(CMAX),
+            CMAX_sd = sd(CMAX),
+            CMAX_min = min(CMAX),
+            CMAX_max = max(CMAX)
+  )
+
+![3번CMAX](https://github.com/jueun429/PK-PD-R-study-/assets/133086206/c7af8ed1-6335-42ac-923a-e7d8586e549b)
