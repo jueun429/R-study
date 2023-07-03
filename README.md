@@ -14,11 +14,12 @@ mutate(DV=as.numeric(LIDV)) |>
   mutate(DV_SD=as.numeric(LIDV_SD))
 
 
-ggplot(dataset, aes(x = TIME, y = LIDV)) +
-  geom_line(aes(color = factor(DOSE)), size = 0.5)
+ggplot(dataset, aes(x = TIME, y = LIDV, group = ID, color = DOSE)) + 
+geom_line(aes(color = factor(DOSE)), size = 0.5)
 
 
-  ![1번_R](https://github.com/jueun429/PK-PD-R-study-/assets/133086206/0adc316c-53ff-496a-b70c-0a32dcbae83c)
+![R_1번](https://github.com/jueun429/PK-PD-R-study-/assets/133086206/1a2368c2-c9ac-43de-b7c8-841a1836fc91)
+
 
 
 
