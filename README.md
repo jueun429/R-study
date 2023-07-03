@@ -23,3 +23,5 @@ data_mean_sd_1 |>
   ggplot(aes(x = NOMTIME, y = LIDV_mean)) + geom_line() + geom_point() +
   geom_errorbar(aes(ymin = LIDV_mean + LIDV_sd, ymax = LIDV_mean - LIDV_sd)) +
   facet_wrap(~DOSE) + labs(title = "cycle1_pk")
+
+![2번](https://github.com/jueun429/PK-PD-R-study-/assets/133086206/49d4d4a5-05fd-49f4-a38e-c3d30b7281e5)
