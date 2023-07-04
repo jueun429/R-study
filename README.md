@@ -42,9 +42,11 @@ data_mean_sd_1 <- data_mean_sd |>
   )
 
 data_mean_sd_1 |>
-  ggplot(aes(x = NOMTIME, y = LIDV_mean)) + geom_line() + geom_point() + geom_errorbar(aes(ymin = LIDV_mean + LIDV_sd, ymax = LIDV_mean - LIDV_sd)) + facet_wrap(~DOSE)
+  ggplot(aes(x = NOMTIME, y = LIDV_mean)) + geom_line(aes(color = factor(DOSE)), size = 0.5) + geom_point(aes(color = factor(DOSE))) + geom_errorbar(aes(ymin = LIDV_mean + LIDV_sd, ymax = LIDV_mean - LIDV_sd, color = factor(DOSE))) + facet_wrap(~DOSE)
 
-![2](https://github.com/jueun429/PK-PD-R-study-/assets/133086206/ea62a68e-1ebe-4483-934d-2f3c6e45743d)
+![2과제](https://github.com/jueun429/PK-PD-R-study-/assets/133086206/35b53f77-5e7b-4710-8327-cd5f5a1e0802)
+
+
 
 
 
