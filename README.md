@@ -109,15 +109,14 @@ NCA_result <- tblNCA(NCA_1, key=c("ID", "DOSE"), colTime="NOMTIME", colConc="LID
 NCA_CMAX <- NCA_result |> 
   select(ID, DOSE, CMAX) |>
   group_by(DOSE) |>
-  summarize(CMAX_mean = mean(CMAX),
-            CMAX_median = median(CMAX),
-            CMAX_sd = sd(CMAX),
-            CMAX_min = min(CMAX),
-            CMAX_max = max(CMAX)
+  summarize(CMAX_mean = mean(CMAX, na.rm = T),
+            CMAX_median = median(CMAX, na.rm = T),
+            CMAX_sd = sd(CMAX, na.rm = T),
+            CMAX_min = min(CMAX, na.rm = T),
+            CMAX_max = max(CMAX, na.rm = T)
   )
 
 
-![3_R](https://github.com/jueun429/PK-PD-R-study-/assets/133086206/2398d20a-df60-41d6-b6a6-6872203fcfa0)
+![3r](https://github.com/jueun429/PK-PD-R-study-/assets/133086206/828aa6e1-de64-47c4-824b-b62230e91b2b)
 
-![3결과](https://github.com/jueun429/PK-PD-R-study-/assets/133086206/2efe4a74-6aee-4160-bc01-378018982507)
-
+![3r-1](https://github.com/jueun429/PK-PD-R-study-/assets/133086206/b3b8b772-e7b8-491f-acf5-f17f16ecf2dd)
