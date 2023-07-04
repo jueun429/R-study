@@ -104,9 +104,9 @@ NCA_1 <- read.csv("C:/PKPD/pkpd_dataset.csv") |>
   filter(NAME == "PK Concentration" & !is.na(LIDV)) |>
   select(ID, NOMTIME, LIDV, DOSE, NAME)
 
-nca_result <- tblNCA(NCA, key=c("ID", "DOSE"), colTime="NOMTIME", colConc="LIDV",timeUnit = "h", doseUnit="mg", concUnit="ng/mL")
+NCA_result <- tblNCA(NCA_1, key=c("ID", "DOSE"), colTime="NOMTIME", colConc="LIDV",timeUnit = "h", doseUnit="mg", concUnit="ng/mL")
 
-NCA_CMAX <- nca_result |> 
+NCA_CMAX <- NCA_result |> 
   select(ID, DOSE, CMAX) |>
   group_by(DOSE) |>
   summarize(CMAX_mean = mean(CMAX),
@@ -117,5 +117,7 @@ NCA_CMAX <- nca_result |>
   )
 
 
-![3번CMAX](https://github.com/jueun429/PK-PD-R-study-/assets/133086206/c7af8ed1-6335-42ac-923a-e7d8586e549b)
+![3_R](https://github.com/jueun429/PK-PD-R-study-/assets/133086206/2398d20a-df60-41d6-b6a6-6872203fcfa0)
+
+![3결과](https://github.com/jueun429/PK-PD-R-study-/assets/133086206/2efe4a74-6aee-4160-bc01-378018982507)
 
