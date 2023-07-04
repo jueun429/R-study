@@ -30,7 +30,7 @@ library("ggplot2")
 
 data_mean_sd <- read.csv("C:/PKPD/pkpd_dataset.csv") |> 
   filter(CYCLE == 1 & NAME == "PK Concentration") |>
-  select(ID, NOMTIME, LIDV, NAME, DOSE) |>
+  select(ID, NAME, NOMTIME, LIDV, DOSE) |>
   mutate(DOSE = as.numeric(DOSE))
 
 
@@ -42,12 +42,10 @@ data_mean_sd_1 <- data_mean_sd |>
   )
 
 data_mean_sd_1 |>
-  ggplot(aes(x = NOMTIME, y = LIDV_mean)) + geom_line() + geom_point() +
-  geom_errorbar(aes(ymin = LIDV_mean + LIDV_sd, ymax = LIDV_mean - LIDV_sd)) +
-  facet_wrap(~DOSE) + labs(title = "cycle1_pk")
+  ggplot(aes(x = NOMTIME, y = LIDV_mean)) + geom_line() + geom_point() + geom_errorbar(aes(ymin = LIDV_mean + LIDV_sd, ymax = LIDV_mean - LIDV_sd)) + facet_wrap(~DOSE)
 
+![2](https://github.com/jueun429/PK-PD-R-study-/assets/133086206/ea62a68e-1ebe-4483-934d-2f3c6e45743d)
 
-![2번](https://github.com/jueun429/PK-PD-R-study-/assets/133086206/49d4d4a5-05fd-49f4-a38e-c3d30b7281e5)
 
 
 
