@@ -2,7 +2,7 @@
 
 １번문제
 
-library("dplyr")
+`library("dplyr")
 library("ggplot2") 
 
 
@@ -18,7 +18,7 @@ mutate(DV=as.numeric(LIDV)) |>
 
 ggplot(dataset, aes(x = TIME, y = LIDV, group = ID)) + geom_point(aes(color = factor(DOSE))) + 
   geom_line(aes(color = factor(DOSE)), size = 0.5) + facet_wrap(~DOSE) y = LIDV, group = ID)) + 
-geom_line(aes(color = factor(DOSE)), size = 0.5)
+geom_line(aes(color = factor(DOSE)), size = 0.5)`
 
 
 ![1과제](https://github.com/jueun429/PK-PD-R-study-/assets/133086206/f4470951-3e5b-4c5c-aa73-1f9b114a6922)
