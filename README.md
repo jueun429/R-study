@@ -3,20 +3,20 @@
 １번문제
 
 `library("dplyr")
-library("ggplot2") 
+library("ggplot2") `
 
 
 
-dataset <- read.csv("C:/PKPD/pkpd_dataset.csv") |> 
+`dataset <- read.csv("C:/PKPD/pkpd_dataset.csv") |> 
   subset(CMT==2 & CYCLE==1,) |> 
   group_by(DOSE, ID) |> 
 mutate(DV=as.numeric(LIDV)) |> 
   mutate(DV_mean=mean(LIDV, na.rm = TRUE)) |> 
   mutate(DV_SD =sd(LIDV, na.rm = TRUE)) |> 
-  mutate(DV_SD=as.numeric(LIDV_SD))
+  mutate(DV_SD=as.numeric(LIDV_SD))`
 
 
-ggplot(dataset, aes(x = TIME, y = LIDV, group = ID)) + geom_point(aes(color = factor(DOSE))) + 
+`ggplot(dataset, aes(x = TIME, y = LIDV, group = ID)) + geom_point(aes(color = factor(DOSE))) + 
   geom_line(aes(color = factor(DOSE)), size = 0.5) + facet_wrap(~DOSE) y = LIDV, group = ID)) + 
 geom_line(aes(color = factor(DOSE)), size = 0.5)`
 
